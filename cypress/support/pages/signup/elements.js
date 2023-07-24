@@ -30,5 +30,15 @@ export const ELEMENTS = {
     number: '[data-qa="mobile_number"]',
 
     //Clicar no botão Create Account
-    createAccount: '[data-qa="create-account"]'
+    createAccount: '[data-qa="create-account"]',
+
+    //Weekly 05/11/2023 - Revisão de Conteúdo (Melhorias após essa aula)
+    //Mensagem de quando está na página de cadastro (signup) do cenário "I am redirected to the signup page"
+    //msgSignup: '.clearfix > :nth-child(1)', //Validava mensagem antiga "Title"
+    msgSignup: ':nth-child(1) > b', //Mensagem nova escolhida para validação "ENTER ACCOUNT INFORMATION"
+
+    //Mensagem de sucesso para o cenário "the data is registered"
+    //msgSuccess: '.col-sm-9 > :nth-child(2)' //Validava mensagem antiga "Congratulations! Your new account has been successfully created!"
+    msgSuccess: 'b' //Mensagem nova escolhida para validação "ACCOUNT CREATED"
+
 }

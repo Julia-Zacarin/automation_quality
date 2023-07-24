@@ -18,6 +18,12 @@ class signup {
         cy.get(elSignup.emailInput).type('emailteste32@gmail')
     }
 
+    //Weekly 05/11/2023 - Revisão de Conteúdo (Melhorias após essa aula)
+    //Mensagem de quando está na página de cadastro (signup) do cenário "I am redirected to the signup page"
+    pageSignup(){
+        cy.get(elSignup.msgSignup).should('be.visible') //be.visible: afirma que é visível
+    }
+
     //Clicar no botão Signup
     clickSignupBtn() {
         cy.get(elSignup.iconeSignup).click({force:true}) //Force true: força o comportamento de algumas ações do Cypress
@@ -48,5 +54,15 @@ class signup {
     clickCreateAccountBtn() {
     cy.get(elSignup.createAccount).click({force:true})
     }
+
+    //Weekly 05/11/2023 - Revisão de Conteúdo (Melhorias após essa aula)
+    //Mensagem de sucesso para o cenário "the data is registered"
+    validateMsg(){
+        cy.get(elSignup.msgSuccess).should('be.visible') //be.visible: afirma que é visível
+    }
 }
-export default new signup()
+export default new signup() //essa função quer dizer que está exportanto uma instância dessa classe.
+// Ou seja, exporta essas classes como um objeto para quando chamar essa classe em outra página, conseguimos usar ela/ manipular ela.
+// O nome dela (signup) é a primeira palavra após Import na página de steps.
+// Além disso, o nome dela também "chama" essas Classes (funções) de cada cenário na página de steps. 
+// Exemplo: signup.validateMsg()

@@ -130,8 +130,11 @@ When("I access the login page", () => {
     signup.clickSignupBtn() //Clicar no botão Signup
  })
 
+ //Weekly 05/11/2023 - Revisão de Conteúdo (Melhorias após essa aula)
+ //Mensagem de quando está na página de cadastro (signup) do cenário "I am redirected to the signup page"
  And("I am redirected to the signup page", () => {
-    cy.get('.clearfix > :nth-child(1)').should('contain', 'Title')
+    //cy.get('.clearfix > :nth-child(1)').should('contain', 'Title') // Antes validava se página contém a palavra Title
+    signup.pageSignup()
 })
 
 When("I fill in all the input fields with valid data", () => {
@@ -142,6 +145,14 @@ And("I click on Create Account", () => {
     signup.clickCreateAccountBtn()
 })
 
+//Then("the data is registered", () => {
+    //cy.get('.col-sm-9 > :nth-child(2)').should('contain', 'Congratulations! Your new account has been successfully created!')
+//})
+
+//Weekly 05/11/2023 - Revisão de Conteúdo (Melhorias após essa aula)
+//Mensagem de sucesso para o cenário "the data is registered"
+
 Then("the data is registered", () => {
-    cy.get('.col-sm-9 > :nth-child(2)').should('contain', 'Congratulations! Your new account has been successfully created!')
+    signup.validateMsg() //Mensagem nova escolhida para validação "ACCOUNT CREATED"
+    //Mensagem antiga validava "Congratulations! Your new account has been successfully created!"
 })
