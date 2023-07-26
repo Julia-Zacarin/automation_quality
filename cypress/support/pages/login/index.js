@@ -1,3 +1,6 @@
+// Weekly: Quality Assurance (Automação - 20/04/2023)
+// Feature: loginParte2
+
 // Aqui fica as classes (eras as funções)
 /// <reference types="Cypress" />
 

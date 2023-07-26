@@ -1,3 +1,6 @@
+// Tarefa 03 do desafio de Automação (27/04/2023)
+// Feature: signup
+
 // Elementos da página (eram as variáveis)
 
 export const ELEMENTS = {

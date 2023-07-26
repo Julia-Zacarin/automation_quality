@@ -1,3 +1,6 @@
+// Tarefa 03 do desafio de Automação (27/04/2023)
+// Feature: signup
+
 // Classes (eram as funções)
 /// <reference types="Cypress" />
 

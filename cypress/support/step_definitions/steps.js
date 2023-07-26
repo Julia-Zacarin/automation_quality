@@ -1,6 +1,7 @@
 import {Before, Given, When, And, Then} from "cypress-cucumber-preprocessor/steps"
 import login from '../pages/login' // Está dizendo onde está os objetos e classes de login
 import signup from '../pages/signup' // Está dizendo onde está os objetos e classes de signup
+import loginParte3 from '../pages/loginParte3' // Está dizendo onde está os objetos e classes de loginParte3
 
 //Weekly: Quality Assurance (Automação - 13/04/2023)
 // Feature: googleSearch
@@ -155,4 +156,35 @@ And("I click on Create Account", () => {
 Then("the data is registered", () => {
     signup.validateMsg() //Mensagem nova escolhida para validação "ACCOUNT CREATED"
     //Mensagem antiga validava "Congratulations! Your new account has been successfully created!"
+})
+
+//---------------------------------------------------------------------------------------------------------
+// Estudos da Weekly de Fixtures
+// Feature: Weekly Automação 18/05/2023 - Mentoria do Dionisio
+
+Given("I access the home page loginParte3", () => {
+    loginParte3.accessSite()
+})
+
+When("I access the login page loginParte3", () => {
+    loginParte3.clickLoginIcone()
+})
+
+And("I submit incorrect username and password", () => {
+    loginParte3.formLogin()
+    loginParte3.clickLoginButton()
+})
+
+Then("should display and error message", () => {
+    loginParte3.message()
+})
+
+And("I submit correct username and password", () => {
+    loginParte3.formCorrectLogin()
+    loginParte3.clickLoginButton()
+})
+
+Then("should user logged", () => {
+    cy.wait(500)
+    loginParte3.logged()
 })
