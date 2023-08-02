@@ -188,3 +188,17 @@ Then("should user logged", () => {
     cy.wait(500)
     loginParte3.logged()
 })
+
+//---------------------------------------------------------------------------------------------------------
+// Estudos da Weekly de Seletores
+// Feature:  Weekly Automação 25/05/2023 - Aula 07 - Seletores
+
+Given("I access the page", () => {
+    cy.visit("https://automationexercise.com/")
+    cy.get("#header") //Exemplo ID -> usa #
+    cy.get(".product-image-wrapper") //Exemplo Classe -> usa .
+    cy.get(".header-middle") //Exemplo Classe -> usa .
+    cy.get('[src="/get_product_picture/1"]') //Exemplo atributo HTML -> usa '[]'
+    // cy.get("/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/img") //Exemplo XPATH - usa apenas ""
+    cy.get('.productinfo>[src="/get_product_picture/1"]+h2') //Exemplo seletores combinados
+})
