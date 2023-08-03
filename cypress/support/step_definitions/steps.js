@@ -2,6 +2,7 @@ import {Before, Given, When, And, Then} from "cypress-cucumber-preprocessor/step
 import login from '../pages/login' // Está dizendo onde está os objetos e classes de login
 import signup from '../pages/signup' // Está dizendo onde está os objetos e classes de signup
 import loginParte3 from '../pages/loginParte3' // Está dizendo onde está os objetos e classes de loginParte3
+import exSeletores from '../pages/exSeletores'
 
 //Weekly: Quality Assurance (Automação - 13/04/2023)
 // Feature: googleSearch
@@ -159,8 +160,8 @@ Then("the data is registered", () => {
 })
 
 //---------------------------------------------------------------------------------------------------------
-// Estudos da Weekly de Fixtures
-// Feature: Weekly Automação 18/05/2023 - Mentoria do Dionisio
+// Estudos da Weekly Automação 18/05/2023 - Mentoria do Dionisio
+// Feature: loginParte3
 
 Given("I access the home page loginParte3", () => {
     loginParte3.accessSite()
@@ -190,8 +191,8 @@ Then("should user logged", () => {
 })
 
 //---------------------------------------------------------------------------------------------------------
-// Estudos da Weekly de Seletores
-// Feature:  Weekly Automação 25/05/2023 - Aula 07 - Seletores
+// Estudos da Weekly Automação 25/05/2023 - Aula 07 - Seletores
+// Feature: aula07Seletores
 
 Given("I access the page", () => {
     cy.visit("https://automationexercise.com/")
@@ -201,4 +202,20 @@ Given("I access the page", () => {
     cy.get('[src="/get_product_picture/1"]') //Exemplo atributo HTML -> usa '[]'
     // cy.get("/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/img") //Exemplo XPATH - usa apenas ""
     cy.get('.productinfo>[src="/get_product_picture/1"]+h2') //Exemplo seletores combinados
+})
+
+//---------------------------------------------------------------------------------------------------------
+// Tarefa 04 do desafio de Automação (25/05/2023)
+// Feature: exSeletores
+
+Given("I access the home page of the site", () => {
+    exSeletores.accessHome()
+})
+
+When("I access the PDP", () => {
+    exSeletores.clickProduct1tBtn()
+})
+
+Then("I observe the elements of the page", () => {
+    exSeletores.seletoresProduct1()
 })
